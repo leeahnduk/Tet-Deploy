@@ -1,0 +1,7 @@
+---
+#vCenter Settings
+vm_vsphere_host: 192.168.20.4 #Your vCenter
+vm_vsphere_user: administrator@dmz.cisco.demo # Your User here
+vm_vsphere_password: C1scoUC$ # Your PW here
+vm_vsphere_datacenter: SGP # The DC  Tetration-V is running in
+vm_vsphere_cluster: HX-2 # Tetration-V server cluster

@@ -1,0 +1,320 @@
+---
+- name: Tetration Anti-affinity rule creation
+  hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Create DRS Anti-Affinity Rule for VM-VM orchestrator
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - orchestrator-1
+        - orchestrator-2
+        - orchestrator-3
+      drs_rule_name: orchestrator-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM adhoc
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - adhoc-1
+        - adhoc-2
+      drs_rule_name: adhoc-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM appServer
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - appServer-1
+        - appServer-2
+      drs_rule_name: appServer-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM collectorDatamover
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - collectorDatamover-1
+        - collectorDatamover-2
+      drs_rule_name: collectorDatamover-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM datanode
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - datanode-1
+        - datanode-2
+        - datanode-3
+        - datanode-4
+      drs_rule_name: datanode-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM druidCoordinator
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - druidCoordinator-1
+        - druidCoordinator-2
+      drs_rule_name: druidCoordinator-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM druidHistoricalBroker
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - druidHistoricalBroker-1
+        - druidHistoricalBroker-2
+      drs_rule_name: druidHistoricalBroker-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM elasticsearch
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - elasticsearch-1
+        - elasticsearch-2
+        - elasticsearch-3
+      drs_rule_name: elasticsearch-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+  
+  - name: Create DRS Anti-Affinity Rule for VM-VM enforcementCoordinator
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - enforcementCoordinator-1
+        - enforcementCoordinator-2
+        - enforcementCoordinator-3
+      drs_rule_name: enforcementCoordinator-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM enforcementPolicyStore
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - enforcementPolicyStore-1
+        - enforcementPolicyStore-2
+        - enforcementPolicyStore-3
+      drs_rule_name: enforcementPolicyStore-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM happobat
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - happobat-1
+        - happobat-2
+      drs_rule_name: happobat-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM hbaseMaster
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - hbaseMaster-1
+        - hbaseMaster-2
+      drs_rule_name: hbaseMaster-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM hbaseRegionServer
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - hbaseRegionServer-1
+        - hbaseRegionServer-2
+        - hbaseRegionServer-3
+      drs_rule_name: hbaseRegionServer-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+  
+  - name: Create DRS Anti-Affinity Rule for VM-VM launcherHost
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - launcherHost-1
+        - launcherHost-2
+        - launcherHost-3
+      drs_rule_name: launcherHost-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM mongodb
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - mongodb-1
+        - mongodb-2
+      drs_rule_name: mongodb-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM namenode
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - namenode-1
+        - secondaryNamenode-1
+      drs_rule_name: namenode-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM redis
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - redis-1
+        - redis-2
+        - redis-3
+      drs_rule_name: redis-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  - name: Create DRS Anti-Affinity Rule for VM-VM tsdbBosunGrafana
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - tsdbBosunGrafana-1
+        - tsdbBosunGrafana-2
+      drs_rule_name: tsdbBosunGrafana-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+      
+  - name: Create DRS Anti-Affinity Rule for VM-VM zookeeper
+    vmware_vm_vm_drs_rule:
+      hostname: "{{ vm_vsphere_host }}"
+      username: "{{ vm_vsphere_user }}"
+      password: "{{ vm_vsphere_password }}"
+      cluster_name: "{{ vm_vsphere_cluster }}"
+      validate_certs: no
+      vms:
+        - zookeeper-1
+        - zookeeper-2
+        - zookeeper-3
+      drs_rule_name: zookeeper-anti-affinity-rule
+      mandatory: True
+      state: present
+      enabled: True
+      affinity_rule: False
+
+  
